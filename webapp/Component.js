@@ -26,14 +26,14 @@ sap.ui.define([
 
 			// create the views based on the url/hash
 			this.getRouter().initialize();
-			this.getRouter().getRoute("overview").attachPatternMatched(this._onObjectMatched1, this);
+			this.getRouter().getRoute("overview").attachPatternMatched(this._overviewMatched, this);
 
-			this.getRouter().getRoute("detail").attachPatternMatched(this._onObjectMatched, this);
+			this.getRouter().getRoute("detail").attachPatternMatched(this._detailMatched, this);
 		},
-		_onObjectMatched: function(oEvent) {
+		_overviewMatched: function(oEvent) {
 			console.log("W");
 		},
-		_onObjectMatched1: function(oEvent) {
+		_detailMatched: function(oEvent) {
 			console.log("over");
 		}
 	});
