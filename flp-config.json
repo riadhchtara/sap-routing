@@ -1,0 +1,34 @@
+{
+    "application": {
+        "id": "",
+        "title": "sap.ui.demo.wt.sap.m.tutorial.walkthrough.31",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/webapp",
+        "appUrl": "#sapmtutorialwalkthrough31-Display",
+        "navigationComponentName": "sap.ui.demo.wt",
+        "intentSemanticObject": "sap.m.tutorial.walkthrough.31",
+        "intentAction": "Display",
+        "html5ApplicationName": "sapmtutorialwalkthrough31",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "00000000-0000-1111-0000-00000000"
+        ],
+        "contentPackages": [
+            "00000000-0000-2222-0000-00000000"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "SAPUI5 Walkthrough",
+        "subtitle": "Subtitle",
+        "searchKeywords": "SAPUI5 Walkthrough,Subtitle",
+        "displayIconUrl": "sap-icon://approvals",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}
