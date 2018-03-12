@@ -4,14 +4,14 @@ sap.ui.define([
 ], function(Controller, MessageToast) {
 	"use strict";
 
-	return Controller.extend("sap.ui.demo.wt.controller.Overview", {
+	return Controller.extend("sap.ui.demo.wt.controller.Default", {
 
-	navtomaster: function () {
+		navtomaster: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("detail");
 
 			// show message
-		
+
 		},
 
 		onOpenDialog: function() {}

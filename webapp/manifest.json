@@ -47,9 +47,6 @@
 				"settings": {
 					"bundleName": "sap.ui.demo.wt.i18n.i18n"
 				}
-			},
-			"invoice": {
-				"dataSource": "invoiceRemote"
 			}
 		},
 		"resources": {
@@ -70,8 +67,8 @@
 			"routes": [
 				{
 					"pattern": "",
-					"name": "overview",
-					"target": "overview"
+					"name": "default",
+					"target": "default"
 				},
 				{
 					"pattern": "detail",
@@ -80,8 +77,8 @@
 				}
 			],
 			"targets": {
-				"overview": {
-					"viewName": "Overview"
+				"default": {
+					"viewName": "Default"
 				},
 				"detail": {
 					"viewName": "Detail"

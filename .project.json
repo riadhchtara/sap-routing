@@ -2,7 +2,7 @@
   "hcpdeploy": {
     "account": "d063828trial",
     "name": "sapmtutorialwalkthrough31",
-    "lastVersionWeTriedToDeploy": "1.0.28"
+    "lastVersionWeTriedToDeploy": "1.0.35"
   },
   "mockpreview": {
     "mockUri": "/destinations/northwind/V2/Northwind/Northwind.svc/",

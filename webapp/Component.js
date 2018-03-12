@@ -26,6 +26,16 @@ sap.ui.define([
 
 			// create the views based on the url/hash
 			this.getRouter().initialize();
+			this.getRouter().addRoute({
+				"pattern": "",
+				"name": "overview",
+				"target": "overview"
+			});
+			this.getRouter().addRoute({
+				"pattern": "detail",
+				"name": "detail",
+				"target": "detail"
+			});
 			this.getRouter().getRoute("overview").attachPatternMatched(this._overviewMatched, this);
 
 			this.getRouter().getRoute("detail").attachPatternMatched(this._detailMatched, this);
