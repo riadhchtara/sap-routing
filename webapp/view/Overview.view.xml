@@ -9,8 +9,10 @@
 				press="onOpenDialog"/>
 		</headerContent>
 		<content>
-			<mvc:XMLView viewName="sap.ui.demo.wt.view.HelloPanel"/>
-
+			<Button
+				text="{i18n>showHelloButtonText}"
+				press="onShowHello"
+				class="myCustomButton"/>
 		</content>
 	</Page>
 </mvc:View>
