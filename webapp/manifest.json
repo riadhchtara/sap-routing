@@ -69,11 +69,6 @@
 					"pattern": "",
 					"name": "default",
 					"target": "default"
-				},
-				{
-					"pattern": "detail",
-					"name": "detail",
-					"target": "detail"
 				}
 			],
 			"targets": {
