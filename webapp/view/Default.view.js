@@ -1,0 +1,33 @@
+sap.ui.jsview("sap.ui.demo.wt.view.Default", {
+
+	/** Specifies the Controller belonging to this View. 
+	* In the case that it is not implemented, or that "null" is returned, this View does not have a Controller.
+	* @memberOf view.View1
+	*/ 
+	getControllerName : function() {
+		return "sap.ui.demo.wt.controller.Default";
+	},
+
+	/** Is initially called once after the Controller has been instantiated. It is the place where the UI is constructed. 
+	* Since the Controller is given to this method, its event handlers can be attached right away. 
+	* @memberOf view.View1
+	*/ 
+	createContent : function(oController) {
+	    
+	    var oButton1 = new sap.m.Button(this.createId("navtomaster"), {
+	        text : "navtomaster",
+	        press: oController.navtomaster.bind(oController)
+	    });
+	    var oButton2 = new sap.m.Button(this.createId("navtodetail"), {
+	        text : "navtodetail",
+	        press: oController.navtodetail.bind(oController)
+	    });
+	    
+		return new sap.m.Page({
+			content: [
+				oButton1,
+			    oButton2
+			]
+		});
+	}
+});

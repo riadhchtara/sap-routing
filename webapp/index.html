@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+0<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,16 +12,20 @@
 		data-sap-ui-compatVersion="edge"
 		data-sap-ui-preload="async"
 		data-sap-ui-resourceroots='{
+		"view": "./",
 			"sap.ui.demo.wt": "./"
 		}'>
 	</script>
-	<script>
+	<script>/*
 		sap.ui.getCore().attachInit(function () {
+			debugger
+					var view = sap.ui.view({id:"idApp1", type:sap.ui.core.mvc.ViewType.JS,
+					viewName:"sap.ui.demo.wt.view.App"});
+				var app = new sap.m.App({initialPage:"idApp1"});  
 			new sap.m.Shell({
-				app: new sap.ui.core.ComponentContainer({
-					name: "sap.ui.demo.wt"
-				})
-			}).placeAt("content");
+				
+				app: app
+			}).placeAt("content");*/
 		});
 	</script>
 </head>

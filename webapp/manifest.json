@@ -34,7 +34,10 @@
 	},
 	"sap.ui5": {
 		"_version": "1.1.0",
-		"rootView": "sap.ui.demo.wt.view.App",
+		"rootView": {
+			"viewName": "sap.ui.demo.wt.view.App",
+			"type": "JS"
+		},
 		"dependencies": {
 			"minUI5Version": "1.30",
 			"libs": {
@@ -59,7 +62,7 @@
 		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
-				"viewType": "XML",
+				"viewType": "JS",
 				"viewPath": "sap.ui.demo.wt.view",
 				"controlId": "app",
 				"controlAggregation": "pages"
