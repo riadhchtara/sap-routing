@@ -74,9 +74,6 @@
 			"targets": {
 				"default": {
 					"viewName": "Default"
-				},
-				"detail": {
-					"viewName": "Detail"
 				}
 			}
 		}

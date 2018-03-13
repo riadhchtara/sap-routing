@@ -33,7 +33,7 @@ sap.ui.define([
 			this.getRouter().addRoute({
 				"pattern": "detail",
 				"name": "detail",
-				"target": "detail"
+				"target": "default"
 			});
 			this.getRouter().getRoute("default").attachPatternMatched(this._overviewMatched, this);
 

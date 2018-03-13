@@ -8,13 +8,20 @@ sap.ui.define([
 
 		navtomaster: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("default");
+
+			// show message
+
+		},
+		
+		navtodetail: function() {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("detail");
 
 			// show message
 
 		},
 
-		onOpenDialog: function() {}
 	});
 
 });

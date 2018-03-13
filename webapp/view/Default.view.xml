@@ -10,8 +10,12 @@
 		</headerContent>
 		<content>
 			<Button
-				text="navtomaste2r"
+				text="navtomaster"
 				press="navtomaster"
+				class="myCustomButton"/>
+							<Button
+				text="navtodetail"
+				press="navtodetail"
 				class="myCustomButton"/>
 		</content>
 	</Page>
