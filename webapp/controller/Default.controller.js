@@ -13,15 +13,25 @@ sap.ui.define([
 			// show message
 
 		},
-		
-		navtodetail: function() {
+
+		navtodetail1: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("detail");
+			oRouter.navTo("detail", {
+				invoicePath: "1"
+			});
 
 			// show message
 
 		},
+		navtodetail2: function() {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 
+			oRouter.navTo("detail", {
+				invoicePath: "2"
+			});
+			// show message
+
+		},
 	});
 
 });

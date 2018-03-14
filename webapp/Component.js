@@ -31,19 +31,19 @@ sap.ui.define([
 		
 		
 			this.getRouter().addRoute({
-				"pattern": "detail",
+				"pattern": "detail/{invoicePath}",
 				"name": "detail",
 				"target": "default"
 			});
-			this.getRouter().getRoute("default").attachPatternMatched(this._overviewMatched, this);
+			this.getRouter().getRoute("default").attachPatternMatched(this._defaultMatched, this);
 
 			this.getRouter().getRoute("detail").attachPatternMatched(this._detailMatched, this);
 		},
-		_overviewMatched: function(oEvent) {
-			console.log("Wooo---w");
+		_defaultMatched: function(oEvent) {
+			console.log("default");
 		},
 		_detailMatched: function(oEvent) {
-			console.log("over");
+			console.log("detail" +  oEvent.getParameter("arguments").invoicePath);
 		}
 	});
 
