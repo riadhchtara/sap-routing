@@ -1,3 +1,6 @@
+
+
+
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/model/json/JSONModel"
@@ -38,12 +41,20 @@ sap.ui.define([
 			this.getRouter().getRoute("default").attachPatternMatched(this._defaultMatched, this);
 
 			this.getRouter().getRoute("detail").attachPatternMatched(this._detailMatched, this);
+
+		
 		},
 		_defaultMatched: function(oEvent) {
+			sap.ui.getCore().byId("nav").to("page1");
 			console.log("default");
 		},
 		_detailMatched: function(oEvent) {
+		  sap.ui.getCore().byId("nav").to("page2");
 			console.log("detail" +  oEvent.getParameter("arguments").invoicePath);
+		},
+		 _bypassed: function(oEvent) {
+		  sap.ui.getCore().byId("nav").to("by");
+		
 		}
 	});
 

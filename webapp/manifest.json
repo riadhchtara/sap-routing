@@ -65,7 +65,10 @@
 				"viewType": "JS",
 				"viewPath": "sap.ui.demo.wt.view",
 				"controlId": "app",
-				"controlAggregation": "pages"
+				"controlAggregation": "pages",
+				"bypassed": {
+                    "target": "default"
+                }
 			},
 			"routes": [
 				{

@@ -34,5 +34,51 @@ sap.ui.jsview("sap.ui.demo.wt.view.Default", {
 				oButton3
 			]
 		});
+	},
+		createContent: function(oController) {
+		var oButton1 = new sap.m.Button(this.createId("navtomaster"), {
+			text: "navtomaster",
+			press: oController.navtomaster.bind(oController)
+		});
+		var oButton2 = new sap.m.Button(this.createId("navtodetail"), {
+			text: "navtodetail 1",
+			press: oController.navtodetail1.bind(oController)
+		});
+		var oButton3 = new sap.m.Button(this.createId("navtodetail2"), {
+			text: "navtodetail 2",
+			press: oController.navtodetail2.bind(oController)
+		});
+	
+		var page1=	new sap.m.Page("page1", {
+			content: [
+				oButton1,
+				oButton2, 
+				oButton3
+			]
+		});
+		
+	var oButton4 = new sap.m.Button(this.createId("navtomaster4"), {
+			text: "navtomaster",
+			press: oController.navtomaster.bind(oController)
+		});
+
+	
+
+	
+		var page2=	new sap.m.Page("page2", {
+			content: [
+
+			oButton4
+			]
+		});
+		var nav =new	sap.m.NavContainer("nav",{
+			pages: [
+				page1, page2
+			]
+		});
+
+
+
+		return nav;
 	}
 });
