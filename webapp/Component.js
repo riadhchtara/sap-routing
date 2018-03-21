@@ -19,6 +19,16 @@ sap.ui.define([
 
 			this.getRouter().initialize();
 
+			this.getRouter().addRoute({
+				"pattern": "detail/{invoicePath}",
+				"name": "detail",
+				"target": "default"
+			});
+			this.getRouter().getRoute("default").attachPatternMatched(this._defaultMatched, this);
+
+			this.getRouter().getRoute("detail").attachPatternMatched(this._detailMatched, this);
+			this.getRouter().parse(location.hash.substr(1));
+
 			//this._detailMatched();
 
 		},

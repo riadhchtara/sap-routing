@@ -14,20 +14,9 @@ sap.ui.jsview("sap.ui.demo.wt.view.Default", {
 	 */
 	
 		createContent: function(oController) {
-			
-			var router = sap.ui.core.UIComponent.getRouterFor(oController);
-			router.addRoute({
-				"pattern": "detail/{invoicePath}",
-				"name": "detail",
-				"target": "default"
-			});
-			
-			
-			router.getRoute("default").attachPatternMatched(this._defaultMatched, this);
 
-			router.getRoute("detail").attachPatternMatched(this._detailMatched, this);
 			
-			router.parse(location.hash.substr(1));
+
 			
 		var oButton1 = new sap.m.Button(this.createId("navtomaster"), {
 			text: "navtomaster",
