@@ -71,11 +71,7 @@
                 }
 			},
 			"routes": [
-				{
-					"pattern": "",
-					"name": "default",
-					"target": "default"
-				}
+		
 			],
 			"targets": {
 				"default": {

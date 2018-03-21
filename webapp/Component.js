@@ -9,24 +9,36 @@ sap.ui.define([
 		metadata: {
 			manifest: "json"
 		},
-
+		getConfig: function() {
+			return [{
+				p: "detail/{invoicePath}",
+				n: "detail",
+				callback: this._detailMatched
+			}, {
+				p: "",
+				n: "default",
+				callback: this._defaultMatched
+			}]
+		},
 		init: function() {
 
 			// call the init function of the parent
 			UIComponent.prototype.init.apply(this, arguments);
-			
+
 			// create the views based on the url/hash
 
 			this.getRouter().initialize();
+			let self = this;
+			var conf = this.getConfig();
+			conf.forEach(function(o) {
+				self.getRouter().addRoute({
+					"pattern": o.p,
+					"name": o.n,
+					"target": "default"
+				});
+				self.getRouter().getRoute(o.n).attachPatternMatched(o.callback, this);
 
-			this.getRouter().addRoute({
-				"pattern": "detail/{invoicePath}",
-				"name": "detail",
-				"target": "default"
 			});
-			this.getRouter().getRoute("default").attachPatternMatched(this._defaultMatched, this);
-
-			this.getRouter().getRoute("detail").attachPatternMatched(this._detailMatched, this);
 			this.getRouter().parse(location.hash.substr(1));
 
 			//this._detailMatched();
