@@ -1,6 +1,3 @@
-
-
-
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/model/json/JSONModel"
@@ -17,44 +14,25 @@ sap.ui.define([
 
 			// call the init function of the parent
 			UIComponent.prototype.init.apply(this, arguments);
-
-			// set data model
-			var oData = {
-				recipient: {
-					name: "World"
-				}
-			};
-			var oModel = new JSONModel(oData);
-			this.setModel(oModel);
-
+			
 			// create the views based on the url/hash
-	
+
 			this.getRouter().initialize();
-	
-		
-		
-			this.getRouter().addRoute({
-				"pattern": "detail/{invoicePath}",
-				"name": "detail",
-				"target": "default"
-			});
-			this.getRouter().getRoute("default").attachPatternMatched(this._defaultMatched, this);
 
-			this.getRouter().getRoute("detail").attachPatternMatched(this._detailMatched, this);
+			//this._detailMatched();
 
-		
 		},
 		_defaultMatched: function(oEvent) {
 			sap.ui.getCore().byId("nav").to("page1");
 			console.log("default");
 		},
 		_detailMatched: function(oEvent) {
-		  sap.ui.getCore().byId("nav").to("page2");
-			console.log("detail" +  oEvent.getParameter("arguments").invoicePath);
+			sap.ui.getCore().byId("nav").to("page2");
+			console.log("detail" + oEvent.getParameter("arguments").invoicePath);
 		},
-		 _bypassed: function(oEvent) {
-		  sap.ui.getCore().byId("nav").to("by");
-		
+		_bypassed: function(oEvent) {
+			sap.ui.getCore().byId("nav").to("by");
+
 		}
 	});
 
