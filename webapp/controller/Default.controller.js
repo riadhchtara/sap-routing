@@ -7,8 +7,10 @@ sap.ui.define([
 	return Controller.extend("sap.ui.demo.wt.controller.Default", {
 
 		navtomaster: function() {
+
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("default");
+			if (oRouter.getRoute("default"))
+				oRouter.navTo("default");
 
 			// show message
 
@@ -16,19 +18,20 @@ sap.ui.define([
 
 		navtodetail1: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("detail", {
-				invoicePath: "1"
-			});
+			if (oRouter.getRoute("detail"))
+				oRouter.navTo("detail", {
+					invoicePath: "1"
+				});
 
 			// show message
 
 		},
 		navtodetail2: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-
-			oRouter.navTo("detail", {
-				invoicePath: "2"
-			});
+			if (oRouter.getRoute("detail"))
+				oRouter.navTo("detail", {
+					invoicePath: "2"
+				});
 			// show message
 
 		},

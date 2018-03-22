@@ -67,12 +67,10 @@
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"bypassed": {
-                    "target": "default"
-                }
+					"target": "default"
+				}
 			},
-			"routes": [
-		
-			],
+			"routes": [],
 			"targets": {
 				"default": {
 					"viewName": "Default"

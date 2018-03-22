@@ -55,13 +55,14 @@ sap.ui.define([
 			// create the views based on the url/hash
 
 			this.getRouter().initialize();
+			/*
 			let self = this;
 			var conf = this.getConfig();
 
 			conf.forEach(function(o) {
 				self.addRoute(o);
 
-			});
+			});*/
 			/*	conf.forEach(function(o) {
 				self.getRouter().addRoute({
 					"pattern": o.p,
@@ -73,7 +74,9 @@ sap.ui.define([
 			});
 */
 			//this.updateRoutes(conf);
-			this.getRouter().parse(location.hash.substr(1));
+		/*	this.getRouter().parse(location.hash.substr(1));*/
+			
+			
 
 			//this._detailMatched();
 
