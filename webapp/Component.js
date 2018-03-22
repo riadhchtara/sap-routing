@@ -9,6 +9,33 @@ sap.ui.define([
 		metadata: {
 			manifest: "json"
 		},
+		updateRoutes: function(conf) {
+			let routes = this.getRouter()._oRoutes;
+
+			for (let r in routes)
+				routes[r].destroy();
+			this.getRouter()._oRoutes = {};
+			let self = this;
+			conf.forEach(function(o) {
+				self.getRouter().addRoute({
+					"pattern": o.p + "W2",
+					"name": o.n,
+					"target": "default"
+				});
+				self.getRouter().getRoute(o.n).attachPatternMatched(o.callback, this);
+			});
+
+		},
+		addRoute: function(route) {
+
+			this.getRouter().addRoute({
+				"pattern": route.p,
+				"name": route.n,
+				"target": "default"
+			});
+			this.getRouter().getRoute(route.n).attachPatternMatched(route.callback, this);
+
+		},
 		getConfig: function() {
 			return [{
 				p: "detail/{invoicePath}",
@@ -30,7 +57,12 @@ sap.ui.define([
 			this.getRouter().initialize();
 			let self = this;
 			var conf = this.getConfig();
+
 			conf.forEach(function(o) {
+				self.addRoute(o);
+
+			});
+			/*	conf.forEach(function(o) {
 				self.getRouter().addRoute({
 					"pattern": o.p,
 					"name": o.n,
@@ -39,6 +71,8 @@ sap.ui.define([
 				self.getRouter().getRoute(o.n).attachPatternMatched(o.callback, this);
 
 			});
+*/
+			//this.updateRoutes(conf);
 			this.getRouter().parse(location.hash.substr(1));
 
 			//this._detailMatched();
