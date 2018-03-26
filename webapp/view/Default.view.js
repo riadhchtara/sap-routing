@@ -1,4 +1,4 @@
-sap.ui.jsview("sap.ui.demo.wt.view.Default", {
+sap.ui.jsview("routerApp.view.Default", {
 
 	createContent: function(oController) {
 

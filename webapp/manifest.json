@@ -2,7 +2,7 @@
 	"_version": "1.1.0",
 	"sap.app": {
 		"_version": "1.1.0",
-		"id": "sap.ui.demo.wt",
+		"id": "routerApp",
 		"type": "application",
 		"title": "appTitle",
 		"description": "appDescription",
@@ -22,7 +22,7 @@
 	"sap.ui5": {
 		"_version": "1.1.0",
 		"rootView": {
-			"viewName": "sap.ui.demo.wt.view.App",
+			"viewName": "routerApp.view.App",
 			"type": "JS"
 		},
 		"dependencies": {
@@ -36,7 +36,7 @@
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "JS",
-				"viewPath": "sap.ui.demo.wt.view",
+				"viewPath": "routerApp.view",
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"bypassed": {

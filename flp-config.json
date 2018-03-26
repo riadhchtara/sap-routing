@@ -1,11 +1,11 @@
 {
     "application": {
         "id": "",
-        "title": "sap.ui.demo.wt.sap.m.tutorial.walkthrough.31",
+        "title": "routerApp.sap.m.tutorial.walkthrough.31",
         "type": "SAP_UI5_Component",
         "componentUrl": "/webapp",
         "appUrl": "#sapmtutorialwalkthrough31-Display",
-        "navigationComponentName": "sap.ui.demo.wt",
+        "navigationComponentName": "routerApp",
         "intentSemanticObject": "sap.m.tutorial.walkthrough.31",
         "intentAction": "Display",
         "html5ApplicationName": "sapmtutorialwalkthrough31",

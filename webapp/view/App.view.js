@@ -1,4 +1,4 @@
-sap.ui.jsview("sap.ui.demo.wt.view.App", {
+sap.ui.jsview("routerApp.view.App", {
 
 	addRoute: function(route) {
 		let router = sap.ui.core.UIComponent.getRouterFor(this);
