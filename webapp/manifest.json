@@ -4,20 +4,10 @@
 		"_version": "1.1.0",
 		"id": "sap.ui.demo.wt",
 		"type": "application",
-		"i18n": "i18n/i18n.properties",
-		"title": "{{appTitle}}",
-		"description": "{{appDescription}}",
+		"title": "appTitle",
+		"description": "appDescription",
 		"applicationVersion": {
 			"version": "1.0.0"
-		},
-		"dataSources": {
-			"invoiceRemote": {
-				"uri": "/destinations/northwind/V2/Northwind/Northwind.svc/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0"
-				}
-			}
 		}
 	},
 	"sap.ui": {
@@ -27,10 +17,7 @@
 			"desktop": true,
 			"tablet": true,
 			"phone": true
-		},
-		"supportedThemes": [
-			"sap_bluecrystal"
-		]
+		}
 	},
 	"sap.ui5": {
 		"_version": "1.1.0",
@@ -41,23 +28,9 @@
 		"dependencies": {
 			"minUI5Version": "1.30",
 			"libs": {
+				"sap.ui.core": {},
 				"sap.m": {}
 			}
-		},
-		"models": {
-			"i18n": {
-				"type": "sap.ui.model.resource.ResourceModel",
-				"settings": {
-					"bundleName": "sap.ui.demo.wt.i18n.i18n"
-				}
-			}
-		},
-		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
 		},
 		"routing": {
 			"config": {
