@@ -24,14 +24,14 @@ sap.ui.jsview("routerApp.view.App", {
 	},
 	initRouting: function() {
 
-		let router = sap.ui.core.UIComponent.getRouterFor(this); 
+		let router = sap.ui.core.UIComponent.getRouterFor(this);
 		let self = this;
 		var conf = this.getConfig();
 
-		conf.forEach(function(o) {
+		/*conf.forEach(function(o) {
 			self.addRoute(o);
 
-		});
+		});*/
 
 		router.parse(location.hash.substr(1));
 
@@ -116,6 +116,8 @@ sap.ui.jsview("routerApp.view.Default", {
 		if (oRouter.getRoute("default"))
 			oRouter.navTo("default");
 
+		var oHashChanger = sap.ui.core.routing.HashChanger.getInstance();
+		oHashChanger.setHash("");
 		// show message
 
 	},
@@ -126,7 +128,8 @@ sap.ui.jsview("routerApp.view.Default", {
 			oRouter.navTo("detail", {
 				invoicePath: "1"
 			});
-
+		var oHashChanger = sap.ui.core.routing.HashChanger.getInstance();
+		oHashChanger.setHash("detail");
 		// show message
 
 	},
@@ -136,6 +139,8 @@ sap.ui.jsview("routerApp.view.Default", {
 			oRouter.navTo("detail", {
 				invoicePath: "2"
 			});
+		var oHashChanger = sap.ui.core.routing.HashChanger.getInstance();
+		oHashChanger.setHash("detail");
 		// show message
 
 	}
