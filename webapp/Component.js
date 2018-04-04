@@ -105,7 +105,10 @@ sap.ui.jsview("routerApp.view.Default", {
 				nav.to(page2)
 			console.log("hashChanged", oEvent.getParameter("newHash") + "," + oEvent.getParameter("oldHash"));
 		});
-
+		if (oHashChanger.getHash() === "")
+			nav.to(page1)
+		else if (oHashChanger.getHash().indexOf("detail") > -1)
+			nav.to(page2)
 		return nav;
 
 	},
@@ -129,7 +132,7 @@ sap.ui.jsview("routerApp.view.Default", {
 				invoicePath: "1"
 			});
 		var oHashChanger = sap.ui.core.routing.HashChanger.getInstance();
-		oHashChanger.setHash("detail");
+		oHashChanger.setHash("detail ");
 		// show message
 
 	},
