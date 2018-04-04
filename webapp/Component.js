@@ -24,7 +24,7 @@ sap.ui.jsview("routerApp.view.App", {
 	},
 	initRouting: function() {
 
-	   let router = sap.ui.core.UIComponent.getRouterFor(this);
+		let router = sap.ui.core.UIComponent.getRouterFor(this);
 
 		let self = this;
 		var conf = this.getConfig();
@@ -47,7 +47,9 @@ sap.ui.jsview("routerApp.view.App", {
 		console.log("detail" + oEvent.getParameter("arguments").invoicePath);
 	},
 	createContent: function(oController) {
-	    setTimeout(function(){	this.initRouting();}.bind(this), 5000);
+		setTimeout(function() {
+			this.initRouting();
+		}.bind(this), 5000);
 		return new sap.m.App({
 			id: "app"
 		});
@@ -89,10 +91,20 @@ sap.ui.jsview("routerApp.view.Default", {
 				oButton4
 			]
 		});
+
 		var nav = new sap.m.NavContainer("nav", {
 			pages: [
 				page1, page2
 			]
+		});
+
+		var oHashChanger = sap.ui.core.routing.HashChanger.getInstance();
+		oHashChanger.attachEvent("hashChanged", function(oEvent) {
+			if (oEvent.getParameter("newHash") === "")
+				nav.to(page1)
+			else if (oEvent.getParameter("newHash").indexOf("detail"))
+				nav.to(page2)
+			console.log("hashChanged", oEvent.getParameter("newHash") + "," + oEvent.getParameter("oldHash"));
 		});
 
 		return nav;
@@ -142,8 +154,21 @@ sap.ui.define([
 			manifest: "json"
 		},
 		init: function() {
+
 			UIComponent.prototype.init.apply(this, arguments);
 			this.getRouter().initialize();
+
+			var oHashChanger = sap.ui.core.routing.HashChanger.getInstance();
+			oHashChanger.attachEvent("hashChanged", function(oEvent) {
+
+				console.log("hashChanged", oEvent.getParameter("newHash") + "," + oEvent.getParameter("oldHash"));
+			});
+			oHashChanger.attachEvent("hashSet", function(oEvent) {
+				console.log("hashSet" + oEvent.getParameter("sHash"));
+			});
+			oHashChanger.attachEvent("hashReplaced", function(oEvent) {
+				console.log("hashReplaced" + oEvent.getParameter("sHash"));
+			});
 		}
 	});
 });
