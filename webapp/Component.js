@@ -24,8 +24,7 @@ sap.ui.jsview("routerApp.view.App", {
 	},
 	initRouting: function() {
 
-		let router = sap.ui.core.UIComponent.getRouterFor(this);
-
+		let router = sap.ui.core.UIComponent.getRouterFor(this); 
 		let self = this;
 		var conf = this.getConfig();
 
