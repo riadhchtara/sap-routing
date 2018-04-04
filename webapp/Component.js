@@ -39,11 +39,11 @@ sap.ui.jsview("routerApp.view.App", {
 	},
 	_defaultMatched: function(oEvent) {
 
-		sap.ui.getCore().byId("nav").to("page1");
+		//sap.ui.getCore().byId("nav").to("page1");
 		console.log("default");
 	},
 	_detailMatched: function(oEvent) {
-		sap.ui.getCore().byId("nav").to("page2");
+		//sap.ui.getCore().byId("nav").to("page2");
 		console.log("detail" + oEvent.getParameter("arguments").invoicePath);
 	},
 	createContent: function(oController) {
@@ -102,7 +102,7 @@ sap.ui.jsview("routerApp.view.Default", {
 		oHashChanger.attachEvent("hashChanged", function(oEvent) {
 			if (oEvent.getParameter("newHash") === "")
 				nav.to(page1)
-			else if (oEvent.getParameter("newHash").indexOf("detail"))
+			else if (oEvent.getParameter("newHash").indexOf("detail") > -1)
 				nav.to(page2)
 			console.log("hashChanged", oEvent.getParameter("newHash") + "," + oEvent.getParameter("oldHash"));
 		});
