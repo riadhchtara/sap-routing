@@ -2,6 +2,7 @@
     "application": {
         "id": "",
         "title": "routerApp.sap.m.tutorial.walkthrough.31",
+        "description": "m",
         "type": "SAP_UI5_Component",
         "componentUrl": "/webapp",
         "appUrl": "#sapmtutorialwalkthrough31-Display",
@@ -22,9 +23,9 @@
     },
     "tile": {
         "type": "StaticTile",
-        "title": "SAPUI5 Walkthrough",
+        "title": "t",
         "subtitle": "Subtitle",
-        "searchKeywords": "SAPUI5 Walkthrough,Subtitle",
+        "searchKeywords": "t,Subtitle",
         "displayIconUrl": "sap-icon://approvals",
         "displayInfoText": "",
         "size": "1x1",
