@@ -115,9 +115,9 @@ sap.ui.jsview("routerApp.view.Default", {
 
 	navtomaster: function() {
 
-		var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+		/*var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 		if (oRouter.getRoute("default"))
-			oRouter.navTo("default");
+			oRouter.navTo("default");*/
 
 		var oHashChanger = sap.ui.core.routing.HashChanger.getInstance();
 		oHashChanger.setHash("");
@@ -126,22 +126,22 @@ sap.ui.jsview("routerApp.view.Default", {
 	},
 
 	navtodetail1: function() {
-		var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+		/*var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 		if (oRouter.getRoute("detail"))
 			oRouter.navTo("detail", {
 				invoicePath: "1"
-			});
+			});*/
 		var oHashChanger = sap.ui.core.routing.HashChanger.getInstance();
 		oHashChanger.setHash("detail ");
 		// show message
 
 	},
 	navtodetail2: function() {
-		var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+		/*var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 		if (oRouter.getRoute("detail"))
 			oRouter.navTo("detail", {
 				invoicePath: "2"
-			});
+			});*/
 		var oHashChanger = sap.ui.core.routing.HashChanger.getInstance();
 		oHashChanger.setHash("detail");
 		// show message
@@ -167,7 +167,6 @@ sap.ui.define([
 
 			var oHashChanger = sap.ui.core.routing.HashChanger.getInstance();
 			oHashChanger.attachEvent("hashChanged", function(oEvent) {
-
 				console.log("hashChanged", oEvent.getParameter("newHash") + "," + oEvent.getParameter("oldHash"));
 			});
 			oHashChanger.attachEvent("hashSet", function(oEvent) {
