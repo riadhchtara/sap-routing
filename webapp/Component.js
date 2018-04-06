@@ -1,48 +1,15 @@
 sap.ui.jsview("routerApp.view.App", {
-
-	addRoute: function(route) {
-		let router = sap.ui.core.UIComponent.getRouterFor(this);
-
-		router.addRoute({
-			"pattern": route.p,
-			"name": route.n,
-			"target": "default"
-		});
-		router.getRoute(route.n).attachPatternMatched(route.callback, this);
-
-	},
-	getConfig: function() {
-		return [{
-			p: "detail/{invoicePath}",
-			n: "detail",
-			callback: this._detailMatched
-		}, {
-			p: "",
-			n: "default",
-			callback: this._defaultMatched
-		}]
-	},
 	initRouting: function() {
 
 		let router = sap.ui.core.UIComponent.getRouterFor(this);
 		let self = this;
-		var conf = this.getConfig();
-
-		/*conf.forEach(function(o) {
-			self.addRoute(o);
-
-		});*/
-
 		router.parse(location.hash.substr(1));
 
 	},
 	_defaultMatched: function(oEvent) {
-
-		//sap.ui.getCore().byId("nav").to("page1");
 		console.log("default");
 	},
 	_detailMatched: function(oEvent) {
-		//sap.ui.getCore().byId("nav").to("page2");
 		console.log("detail" + oEvent.getParameter("arguments").invoicePath);
 	},
 	createContent: function(oController) {
@@ -114,11 +81,6 @@ sap.ui.jsview("routerApp.view.Default", {
 	},
 
 	navtomaster: function() {
-
-		/*var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-		if (oRouter.getRoute("default"))
-			oRouter.navTo("default");*/
-
 		var oHashChanger = sap.ui.core.routing.HashChanger.getInstance();
 		oHashChanger.setHash("");
 		// show message
@@ -126,26 +88,14 @@ sap.ui.jsview("routerApp.view.Default", {
 	},
 
 	navtodetail1: function() {
-		/*var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-		if (oRouter.getRoute("detail"))
-			oRouter.navTo("detail", {
-				invoicePath: "1"
-			});*/
-		var oHashChanger = sap.ui.core.routing.HashChanger.getInstance();
-		oHashChanger.setHash("detail ");
-		// show message
-
-	},
-	navtodetail2: function() {
-		/*var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-		if (oRouter.getRoute("detail"))
-			oRouter.navTo("detail", {
-				invoicePath: "2"
-			});*/
 		var oHashChanger = sap.ui.core.routing.HashChanger.getInstance();
 		oHashChanger.setHash("detail");
 		// show message
-
+	},
+	navtodetail2: function() {
+		var oHashChanger = sap.ui.core.routing.HashChanger.getInstance();
+		oHashChanger.setHash("detail");
+		// show message
 	}
 });
 
