@@ -25,6 +25,25 @@
 			"viewName": "routerApp.view.App",
 			"type": "JS"
 		},
+		"resources": {
+			"js": [
+				{
+					"uri": "js/z.js"
+				},
+				{
+					"uri": "js/x.js"
+				},
+				{
+					"uri": "js/w.js"
+				},
+				{
+					"uri": "js/k.js"
+				},
+				{
+					"uri": "js/f.js"
+				}
+			]
+		},
 		"dependencies": {
 			"minUI5Version": "1.30",
 			"libs": {
@@ -37,7 +56,7 @@
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "JS",
 				"viewPath": "routerApp.view",
-				"controlId": "app",
+				"controlId": "apppp",
 				"controlAggregation": "pages",
 				"bypassed": {
 					"target": "default"

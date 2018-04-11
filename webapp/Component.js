@@ -7,7 +7,7 @@ sap.ui.jsview("routerApp.view.App", {
   },
   createContent: function (oController) {
     var r = new sap.m.App({
-      id: "app"
+      id: "apppp"
     });
 
     this.initRouting();
