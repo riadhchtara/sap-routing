@@ -8,7 +8,7 @@
 		id="sap-ui-bootstrap"
 		src="https://sapui5.hana.ondemand.com/1.52.9/resources/sap-ui-core.js"
 		data-sap-ui-theme="sap_bluecrystal"
-		data-sap-ui-libs="sap.m"
+		data-sap-ui-libs="sap.m,sap.ui.layout,sap.ui.comp,sap.ui.commons,sap.ui.table,sap.uxap, sap.f, sap.ui.core"
 		data-sap-ui-compatVersion="edge"
 		data-sap-ui-preload="async"
 		data-sap-ui-resourceroots='{
@@ -16,8 +16,25 @@
 			"routerApp": "./"
 		}'>
 	</script>
-	<script>
-	
+
+
+</head>
+
+<body class="sapUiBody" id="content" role="application">
+
+</body>
+<script type="text/javascript" src="js/adt-workplace-jsdeps.js"></script>
+
+<script type="text/javascript" src="js/fast1-1.js"></script>
+<script type="text/javascript" src="js/fast1.js"></script>
+
+<script type="text/javascript" src="js/fast2.js"></script>
+
+<script type="text/javascript" src="js/fast.js"></script>
+<script>
+
+	console.log(HealthApp.getConf())
+
 		sap.ui.getCore().attachInit(function () {
 			new sap.m.Shell({
 				app: new sap.ui.core.ComponentContainer({
@@ -25,10 +42,7 @@
 				})
 			}).placeAt("content");
 		});
-		
+
 
 	</script>
-</head>
-<body class="sapUiBody" id="content">
-</body>
 </html>
