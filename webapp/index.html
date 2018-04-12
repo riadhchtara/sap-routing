@@ -23,17 +23,35 @@
 <body class="sapUiBody" id="content" role="application">
 
 </body>
-<script type="text/javascript" src="js/adt-workplace-jsdeps.js"></script>
+<script type="text/javascript" src="js/z.js"></script>
 
-<script type="text/javascript" src="js/b.js"></script>
-<script type="text/javascript" src="js/c.js"></script>
 
-<script type="text/javascript" src="js/d.js"></script>
-
-<script type="text/javascript" src="js/f.js"></script>
 <script>
 
-	console.log(HealthApp.getConf())
+let s = "";
+jQuery.get('js/f.txt', function(data) {
+	s += data;
+	console.log(data)
+	jQuery.get('js/k.txt', function(data) {
+		s += data;
+		jQuery.get('js/w.txt', function(data) {
+			jQuery.get('js/x.txt', function(data) {
+				s += data;
+				$("#code").html(s);
+					console.log(data)
+				f();
+				s = "";
+			});
+		
+		});
+	});
+
+});
+	
+
+</script>
+<script>
+	function f(){
 
 		sap.ui.getCore().attachInit(function () {
 			new sap.m.Shell({
@@ -41,7 +59,12 @@
 					name: "routerApp"
 				})
 			}).placeAt("content");
-		});
+		});}
+
+	</script>
+	<script id="code">
+	
+	
 
 
 	</script>
