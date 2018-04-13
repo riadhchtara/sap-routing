@@ -24,7 +24,7 @@ sap.ui.jsview("routerApp.view.App", {
 	},
 	initRouting: function() {
 
-	   let router = sap.ui.core.UIComponent.getRouterFor(this);
+		let router = sap.ui.core.UIComponent.getRouterFor(this);
 
 		let self = this;
 		var conf = this.getConfig();
@@ -47,10 +47,12 @@ sap.ui.jsview("routerApp.view.App", {
 		console.log("detail" + oEvent.getParameter("arguments").invoicePath);
 	},
 	createContent: function(oController) {
-	    setTimeout(function(){	this.initRouting();}.bind(this), 5000);
-		return new sap.m.App({
+		let r = new sap.m.App({
 			id: "app"
 		});
+		this.initRouting();
+		// setTimeout(function(){	this.initRouting();}.bind(this), 5000);
+		return r;
 	}
 });
 sap.ui.jsview("routerApp.view.Default", {
@@ -144,6 +146,43 @@ sap.ui.define([
 		init: function() {
 			UIComponent.prototype.init.apply(this, arguments);
 			this.getRouter().initialize();
+		},
+		createContent: function(oController) {
+
+			var oButton1 = new sap.m.Button(this.createId("navtomaster"), {
+				text: "navtomaster",
+				press: this.navtomaster.bind(this)
+			});
+			return oButton1;
+		},
+		navtomaster: function() {
+
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			if (oRouter.getRoute("default"))
+				oRouter.navTo("default");
+
+			// show message
+
+		},
+
+		navtodetail1: function() {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			if (oRouter.getRoute("detail"))
+				oRouter.navTo("detail", {
+					invoicePath: "1"
+				});
+
+			// show message
+
+		},
+		navtodetail2: function() {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			if (oRouter.getRoute("detail"))
+				oRouter.navTo("detail", {
+					invoicePath: "2"
+				});
+			// show message
+
 		}
 	});
 });

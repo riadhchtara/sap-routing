@@ -21,10 +21,7 @@
 	},
 	"sap.ui5": {
 		"_version": "1.1.0",
-		"rootView": {
-			"viewName": "routerApp.view.App",
-			"type": "JS"
-		},
+
 		"dependencies": {
 			"minUI5Version": "1.30",
 			"libs": {
@@ -35,22 +32,16 @@
 		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
-				"viewType": "JS",
-				"viewPath": "routerApp.view",
-				"controlId": "app",
-				"controlAggregation": "pages",
-				"bypassed": {
-					"target": "default"
-				}
+				"viewType": "JS"
+			
 			},
 			"routes": [],
 			"targets": {
-				"default": {
-					"viewName": "Default"
-				}
+			
 			}
 		}
 	},
+
 	"sap.platform.hcp": {
 		"uri": "webapp",
 		"_version": "1.1.0"
