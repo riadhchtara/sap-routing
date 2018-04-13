@@ -27,21 +27,7 @@
 		},
 		"resources": {
 			"js": [
-				{
-					"uri": "js/z.js"
-				},
-				{
-					"uri": "js/x.js"
-				},
-				{
-					"uri": "js/w.js"
-				},
-				{
-					"uri": "js/k.js"
-				},
-				{
-					"uri": "js/f.js"
-				}
+
 			]
 		},
 		"dependencies": {

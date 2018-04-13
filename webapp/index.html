@@ -23,23 +23,36 @@
 <body class="sapUiBody" id="content" role="application">
 
 </body>
-<script type="text/javascript" src="js/z.js"></script>
+<script type="text/javascript" src="js/adt-workplace-jsdeps.js"></script>
 
 
 <script>
+var hookScripts = function(url, src) {
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+
+    s.innerHTML = src || null;
+    document.getElementsByTagName("head")[0].appendChild(s);
+};
 
 let s = "";
-jQuery.get('js/f.txt', function(data) {
+let stand = true;
+jQuery.get('js/adt-workplace-fastopt.js.000', function(data) {
 	s += data;
 	console.log(data)
-	jQuery.get('js/k.txt', function(data) {
+	jQuery.get('js/adt-workplace-fastopt.js.001', function(data) {
 		s += data;
-		jQuery.get('js/w.txt', function(data) {
-			jQuery.get('js/x.txt', function(data) {
+		jQuery.get('js/adt-workplace-fastopt.js.002', function(data) {
 				s += data;
-				$("#code").html(s);
-					console.log(data)
-				f();
+			jQuery.get('js/adt-workplace-fastopt.js.003', function(data) {
+				
+				s += data;
+
+hookScripts(null, s);  //giving the source code directly
+			/*	$("#code").text(s);
+					console.log(data)*/
+			//	fff();
+			f();
 				s = "";
 			});
 		
