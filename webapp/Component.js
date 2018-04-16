@@ -13,15 +13,16 @@ sap.ui.define([
 			UIComponent.prototype.init.apply(this, arguments);
 			this.getRouter().initialize();
 			this.getRouter().attachBypassed(function(l) {
-				console.log(l.mParameters.hash);
-			})
-			this.getRouter().parse("e");
+					console.log(l.mParameters.hash);
+				})
+				//	this.getRouter().parse("e");
 			this.getRouter().addRoute({
-				"pattern": " product/{id}/:detail*:",
+				"pattern": "/:data*:",
 				"name": "data"
 			});
+			
 			this.getRouter().getRoute("data").attachEvent("patternMatched", function(l) {
-				console.log(l.mParameters.arguments.data);
+				console.log(l.mParameters.arguments["data*"]);
 			})
 		},
 		createContent: function(oController) {
@@ -70,31 +71,35 @@ sap.ui.define([
 
 		navtomaster: function() {
 
-			var oRouter =this.getRouter();
-	
-				oRouter.navTo("data",{detail: "master", id: "master"});
+			var oRouter = this.getRouter();
+
+			oRouter.navTo("data", {
+				"*all": "Q%2Fs",
+				"data*": "1",
+				id: "m"
+			});
 
 			// show message
 
 		},
 
 		navtodetail1: function() {
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			if (oRouter.getRoute("detail"))
-				oRouter.navTo("detail", {
-					invoicePath: "1"
-				});
+			var oRouter = this.getRouter();
+
+			oRouter.navTo("data", {
+				"data*": "8/y/a",
+				id: "9"
+			});
 
 			// show message
 
 		},
 		navtodetail2: function() {
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			if (oRouter.getRoute("detail"))
-				oRouter.navTo("detail", {
-					invoicePath: "2"
-				});
-			// show message
+			var oRouter = this.getRouter();
+			oRouter.navTo("data", {
+				id: "5/5",
+				"data*": "33"
+			});
 
 		}
 	});
