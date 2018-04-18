@@ -15,15 +15,25 @@ sap.ui.define([
 			this.getRouter().attachBypassed(function(l) {
 					console.log(l.mParameters.hash);
 				})
-				//	this.getRouter().parse("e");
+				
 			this.getRouter().addRoute({
 				"pattern": "/:data*:",
+			
+		
 				"name": "data"
+			});
+			
+				this.getRouter().addRoute({
+				"pattern": ":data*:",
+			
+		
+				"name": "sdata"
 			});
 			
 			this.getRouter().getRoute("data").attachEvent("patternMatched", function(l) {
 				console.log(l.mParameters.arguments["data*"]);
 			})
+				this.getRouter().parse(new sap.ui.core.routing.HashChanger().getHash());
 		},
 		createContent: function(oController) {
 
@@ -73,7 +83,7 @@ sap.ui.define([
 
 			var oRouter = this.getRouter();
 
-			oRouter.navTo("data", {
+			oRouter.navTo("sdata", {
 				"*all": "Q%2Fs",
 				"data*": "1",
 				id: "m"
@@ -86,7 +96,7 @@ sap.ui.define([
 		navtodetail1: function() {
 			var oRouter = this.getRouter();
 
-			oRouter.navTo("data", {
+			oRouter.navTo("sdata", {
 				"data*": "8/y/a",
 				id: "9"
 			});
@@ -96,7 +106,7 @@ sap.ui.define([
 		},
 		navtodetail2: function() {
 			var oRouter = this.getRouter();
-			oRouter.navTo("data", {
+			oRouter.navTo("sdata", {
 				id: "5/5",
 				"data*": "33"
 			});
