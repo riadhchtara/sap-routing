@@ -17,7 +17,8 @@
 			"desktop": true,
 			"tablet": true,
 			"phone": true
-		}
+		},
+		"supportedThemes": []
 	},
 	"sap.ui5": {
 		"_version": "1.1.0",
@@ -33,8 +34,15 @@
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "JS"
 			},
-			"routes": [],
+			"routes": [{
+				"name": "d",
+				"pattern": ":data*:"
+			}],
 			"targets": {}
+		},
+		"contentDensities": {
+			"compact": false,
+			"cozy": false
 		}
 	},
 	"sap.platform.hcp": {
