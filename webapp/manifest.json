@@ -37,15 +37,15 @@
 				"viewType": "JS"
 			},
 			"routes": [{
-				"pattern": "category",
-				"name": "category",
-				"target": "View1"
+				"pattern": ":data*:",
+				"name": "data",
+				"target": "View"
 			}],
 			"targets": {
-				"View1": {
-					"viewName": "View1",
+				"View": {
+					"viewName": "View",
 					"controlAggregation": "pages",
-					"target": "View1"
+					"target": "View"
 				}
 			}
 		},

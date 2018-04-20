@@ -1,3 +1,33 @@
+sap.ui.jsview("routerApp.view.View", {
+ init: function() {
+       var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+        oRouter.getRoute("data").attachMatched(function(oEvent) {
+            this._selectItemWithId(oEvent.getParameter("arguments")["data*"]);
+        }, this);
+    },
+    _selectItemWithId : function(id) {
+      console.log(id)
+    },
+	createContent: function(oController) {
+
+
+		var oButton4 = new sap.m.Button(this.createId("navtomaster4"), {
+			text: "navtomaster4"
+		});
+
+		var page2 = new sap.m.Page("page4", {
+			content: [
+
+				oButton4
+			]
+		});
+
+
+		return page2;
+
+	}
+});
+
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/model/json/JSONModel"
