@@ -31,14 +31,23 @@
 		},
 		"routing": {
 			"config": {
+				"controlId": "app",
 				"routerClass": "sap.m.routing.Router",
+				"viewPath": "routerApp.view",
 				"viewType": "JS"
 			},
 			"routes": [{
-				"name": "d",
-				"pattern": ":data*:"
+				"pattern": "category",
+				"name": "category",
+				"target": "View1"
 			}],
-			"targets": {}
+			"targets": {
+				"View1": {
+					"viewName": "View1",
+					"controlAggregation": "pages",
+					"target": "View1"
+				}
+			}
 		},
 		"contentDensities": {
 			"compact": false,

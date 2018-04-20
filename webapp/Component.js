@@ -12,31 +12,8 @@ sap.ui.define([
 		init: function() {
 			UIComponent.prototype.init.apply(this, arguments);
 			this.getRouter().initialize();
-			this.getRouter().attachBypassed(function(l) {
-					console.log(l.mParameters.hash);
-				})
-				
-		/*	this.getRouter().addRoute({
-				"pattern": "/:data*:",
-			
-		
-				"name": "data"
-			});*/
-			
-				this.getRouter().addRoute({
-				"pattern": "d",
-			
-		
-				"name": "sdata"
-			});
-					
-			this.getRouter().getRoute("data").attachEvent("patternMatched", function(l) {
-				console.log(l.mParameters.arguments["data*"]);
-			})
-			this.getRouter().getRoute("d").attachEvent("patternMatched", function(l) {
-				console.log(l.mParameters.arguments["data*"]);
-			})
-			//	this.getRouter().parse(new sap.ui.core.routing.HashChanger().getHash());
+
+				//	this.getRouter().parse(new sap.ui.core.routing.HashChanger().getHash());
 		},
 		createContent: function(oController) {
 
