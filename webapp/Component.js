@@ -1,15 +1,19 @@
 sap.ui.jsview("routerApp.view.View", {
- init: function() {
-       var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-        oRouter.getRoute("data").attachMatched(function(oEvent) {
-            this._selectItemWithId(oEvent.getParameter("arguments")["data*"]);
-        }, this);
-    },
-    _selectItemWithId : function(id) {
-      console.log(id)
-    },
-	createContent: function(oController) {
+	init: function() {
+		var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+		oRouter.getRoute("data").attachMatched(function(oEvent) {
+			this._selectItemWithId(oEvent.getParameter("arguments")["data*"]);
+		}, this);
+	},
+	_selectItemWithId: function(id) {
+		if (typeof id === "undefined")
+			id = ""
+		console.log("llll", id);
 
+		this.addContent(HealthApp.init(id));
+
+	},
+	createContent: function(oController) {
 
 		var oButton4 = new sap.m.Button(this.createId("navtomaster4"), {
 			text: "navtomaster4"
@@ -22,8 +26,7 @@ sap.ui.jsview("routerApp.view.View", {
 			]
 		});
 
-
-		return page2;
+		return null;
 
 	}
 });
@@ -43,7 +46,7 @@ sap.ui.define([
 			UIComponent.prototype.init.apply(this, arguments);
 			this.getRouter().initialize();
 
-				//	this.getRouter().parse(new sap.ui.core.routing.HashChanger().getHash());
+			//	this.getRouter().parse(new sap.ui.core.routing.HashChanger().getHash());
 		},
 		createContent: function(oController) {
 
