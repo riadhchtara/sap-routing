@@ -25021,7 +25021,13 @@ $c_Lcom_sap_marmolata_ui_app_Router$UI5Impl.prototype.init___Lcom_sap_marmolata_
   })(this));
   new $c_Lcom_sap_marmolata_reactinternal_impls_selfrx_ObservableSignal().init___Lcom_sap_marmolata_reactinternal_impls_selfrx_Signal__F1(this$21, f$1);
   var this$22 = this.initialHash__Lcom_sap_marmolata_reactinternal_impls_selfrx_Signal();
-  this.initialHash$und$3 = $as_T($f_Lcom_sap_marmolata_reactinternal_impls_selfrx_Signal__now__O(this$22));
+  var f$2 = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$3$1) {
+    return (function(a$3$2) {
+      var a$3 = $as_T(a$3$2);
+      this$3$1.initialHash$und$3 = a$3
+    })
+  })(this));
+  new $c_Lcom_sap_marmolata_reactinternal_impls_selfrx_ObservableSignal().init___Lcom_sap_marmolata_reactinternal_impls_selfrx_Signal__F1(this$22, f$2);
   return this
 });
 $c_Lcom_sap_marmolata_ui_app_Router$UI5Impl.prototype.hash__Lcom_sap_marmolata_reactinternal_impls_selfrx_Signal = (function() {
@@ -25032,7 +25038,7 @@ $c_Lcom_sap_marmolata_ui_app_Router$UI5Impl.prototype.hash__Lcom_sap_marmolata_r
       return $as_T(a.value$1)
     })
   })(this));
-  var this$15 = new $c_Lcom_sap_marmolata_reactinternal_impls_selfrx_MappedEvent().init___Lcom_sap_marmolata_reactinternal_impls_selfrx_Event__F1(this$1, f);
+  var this$16 = new $c_Lcom_sap_marmolata_reactinternal_impls_selfrx_MappedEvent().init___Lcom_sap_marmolata_reactinternal_impls_selfrx_Event__F1(this$1, f);
   var jsx$1 = $g.console;
   var this$5 = this.initialHash__Lcom_sap_marmolata_reactinternal_impls_selfrx_Signal();
   var s = $as_T($f_Lcom_sap_marmolata_reactinternal_impls_selfrx_Signal__now__O(this$5));
@@ -25043,8 +25049,9 @@ $c_Lcom_sap_marmolata_ui_app_Router$UI5Impl.prototype.hash__Lcom_sap_marmolata_r
   var jsx$3 = $g.console;
   var s$2 = $as_T(this.hashChanger$3.getHash());
   jsx$3.log("hashChanger", s$2);
-  var init = $as_T(this.hashChanger$3.getHash());
-  return new $c_Lcom_sap_marmolata_reactinternal_impls_selfrx_SignalFromEvent().init___Lcom_sap_marmolata_reactinternal_impls_selfrx_Event__O(this$15, init)
+  var this$15 = this.initialHash__Lcom_sap_marmolata_reactinternal_impls_selfrx_Signal();
+  var init = $f_Lcom_sap_marmolata_reactinternal_impls_selfrx_Signal__now__O(this$15);
+  return new $c_Lcom_sap_marmolata_reactinternal_impls_selfrx_SignalFromEvent().init___Lcom_sap_marmolata_reactinternal_impls_selfrx_Event__O(this$16, init)
 });
 $c_Lcom_sap_marmolata_ui_app_Router$UI5Impl.prototype.internal__Lcom_sap_marmolata_ui_sapui5_facades_core_Element = (function() {
   return this.internal$3

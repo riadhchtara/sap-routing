@@ -9,7 +9,7 @@ sap.ui.jsview("routerApp.view.View", {
 		if (typeof id === "undefined")
 			id = ""
 		console.log("llll", id);
-
+		if (this.getContent().length == 0)
 		this.addContent(HealthApp.init(id));
 
 	},
