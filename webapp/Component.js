@@ -33,7 +33,7 @@ sap.ui.define([
 			this.getRouter().initialize();
 		},
 		createContent: function(oController) {
-			var app = new sap.m.App("app", {
+			var app = new sap.m.Shell("app", {
 			});
 			return app;
 		}
