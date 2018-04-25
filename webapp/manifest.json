@@ -36,11 +36,13 @@
 				"viewPath": "routerApp.view",
 				"viewType": "JS"
 			},
-			"routes": [{
-				"pattern": ":data*:",
-				"name": "data",
-				"target": "View"
-			}],
+			"routes": [
+				{
+					"pattern": ":data*:",
+					"name": "data",
+					"target": "View"
+				}
+			],
 			"targets": {
 				"View": {
 					"viewName": "View",
