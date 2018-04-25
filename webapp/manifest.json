@@ -46,7 +46,7 @@
 			"targets": {
 				"View": {
 					"viewName": "View",
-					"controlAggregation": "app",
+					"controlAggregation": "page",
 					"target": "View"
 				}
 			}
